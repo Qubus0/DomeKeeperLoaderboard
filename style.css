@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@font-face {
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #213c57;
+  color: #ffecd6;
+  height: 100vh;
+  margin: 0;
+}
+body h1 {
+  text-align: center;
+}
+body a {
+  color: #ffecd6;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+body a:visited {
+  color: #ffecd6;
+}
+body a:hover {
+  color: #fed4a2;
+  text-decoration: underline solid;
+}
+body a[target=_blank]::after {
+  color: #ffecd6;
+  content: "";
+  padding-left: 1rem;
+  margin-left: 0.2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3E%3Ctitle%3EOpen%3C/title%3E%3Cpath d='M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72' fill='none' stroke='%23FFECD6' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'/%3E%3C/svg%3E");
+}
+
+select {
+  background-color: #0c2b44;
+  color: #ffecd6;
+  border: 3px solid #213c57;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+select option {
+  background-color: #0c2b44;
+  color: #ffecd6;
+  font-size: 1.2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: 4rem auto;
+}
+
+.error-message {
+  border: 1px solid #ffab5f;
+  border-radius: 6px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.cache-message-date {
+  color: #ffab5f;
+}
+
+.leaderboard {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leaderboard-entry {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.leaderboard-entry .rank {
+  height: 72px;
+  margin-right: 1.2rem;
+  margin-top: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 2.8rem;
+  box-shadow: 0 3px 6px #00000029;
+  border: 3px solid #ffecd6;
+  border-radius: 50%;
+}
+@media (max-width: 720px) {
+  .leaderboard-entry .rank {
+    height: 46px;
+    font-size: 1.8rem;
+    margin-right: 0.8rem;
+  }
+}
+.leaderboard-entry:nth-of-type(n+1):nth-of-type(-n+3) .rank {
+  border-color: #ffab5f;
+}
+.leaderboard-entry:nth-of-type(n+4):nth-of-type(-n+10) .rank {
+  border-color: #fed4a2;
+}
+.leaderboard-entry .details {
+  padding: 10px;
+  display: flex;
+  background-color: #0c2b44;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 6px;
+}
+.leaderboard-entry .details .icon {
+  image-rendering: pixelated;
+  height: 24px;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+}
+.leaderboard-entry .details .icon-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.leaderboard-entry .details .icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  text-decoration: none;
+}
+.leaderboard-entry .details .icon.trusted {
+  color: #fed4a2;
+}
+.leaderboard-entry .details .icon.suspicious {
+  color: #ffab5f;
+}
+.leaderboard-entry .details .icon.copy {
+  transition: background-image 0.5s ease-in-out;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3E%3Cpath d='M336 64h32a48 48 0 0148 48v320a48 48 0 01-48 48H144a48 48 0 01-48-48V112a48 48 0 0148-48h32' fill='none' stroke='%23ffecd6' stroke-linejoin='round' stroke-width='32'/%3E%3Crect x='176' y='32' width='160' height='64' rx='26.13' ry='26.13' fill='none' stroke='%23ffecd6' stroke-linejoin='round' stroke-width='32'/%3E%3C/svg%3E");
+}
+.leaderboard-entry .details .icon.copy:hover {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3E%3Cpath fill='%23fed4a2' d='M368 48h-11.41a8 8 0 01-7.44-5.08A42.18 42.18 0 00309.87 16H202.13a42.18 42.18 0 00-39.28 26.92 8 8 0 01-7.44 5.08H144a64 64 0 00-64 64v320a64 64 0 0064 64h224a64 64 0 0064-64V112a64 64 0 00-64-64zm-48.13 64H192.13a16 16 0 010-32h127.74a16 16 0 010 32z'/%3E%3C/svg%3E");
+}
+.leaderboard-entry .details .icon.copy:active {
+  transition-duration: 0s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3E%3Cpath fill='%23fed4a2' d='M400 48H112a64.07 64.07 0 00-64 64v288a64.07 64.07 0 0064 64h288a64.07 64.07 0 0064-64V112a64.07 64.07 0 00-64-64zm-35.75 138.29l-134.4 160a16 16 0 01-12 5.71h-.27a16 16 0 01-11.89-5.3l-57.6-64a16 16 0 1123.78-21.4l45.29 50.32 122.59-145.91a16 16 0 0124.5 20.58z'/%3E%3C/svg%3E");
+}
+.leaderboard-entry .details .run {
+  min-height: 80px;
+  margin: 10px 15px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 10px;
+}
+@media (max-width: 720px) {
+  .leaderboard-entry .details .run {
+    grid-template-columns: 1fr;
+  }
+}
+.leaderboard-entry .details .meta {
+  margin: 10px 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.leaderboard-entry .details .meta > * {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

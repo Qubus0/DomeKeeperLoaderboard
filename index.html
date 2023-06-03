@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+    <title>Dome Keeper Prestige Leaderboard</title>
+    <script src="steam-accounts.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<div class="wrapper">
+    <h1>Dome Keeper Prestige Leaderboard</h1>
+    <label for="game-mode-select">Mode</label>
+    <select id="game-mode-select">
+        <!-- the value is the game mode id. not in order because of the order in the game -->
+        <option value="0">Endless Mode</option>
+        <option value="2" selected>Countdown</option>
+        <option value="1">Fixed Cobalt</option>
+        <option value="3">Miner Mode</option>
+    </select>
+    <div class="error-message" style="display: none;">
+        Couldn't fetch new data or display cache
+    </div>
+    <div class="error-message cache-message" style="display: none;">
+        Steam request limit exhausted. Showing cached leaderboard data from
+        <span class="cache-message-date">2023-05-08 12:53</span>. Check the <a class="cache-message-url" href=""
+                                                                               target="_blank">Steam Leaderboards</a> in
+        the mean time.
+    </div>
+    <div class="error-message" id="error-429" style="display: none;">
+        <p style="text-align: center;">
+            Sorry, too many requests were sent. Refresh the page next full hour.
+        </p>
+        <img src="https://http.cat/429" alt="">
+    </div>
+    <div id="leaderboard" class="leaderboard"></div>
+</div>
+
+</body>
+</html>
